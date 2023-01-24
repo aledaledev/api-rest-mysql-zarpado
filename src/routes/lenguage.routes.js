@@ -3,6 +3,10 @@ import { methods as lenguageController } from "../controllers/lenguage.controlle
 
 const router = Router()
 
-router.get('/', lenguageController.getLanguage)
+router.get('/', lenguageController.getLanguages)
+router.get('/:id', lenguageController.getLanguage)
+router.post('/', lenguageController.addLanguage)
+router.delete('/:id', lenguageController.deleteLanguage)
+router.put('/:id', lenguageController.editLanguage)
 
 export default router
