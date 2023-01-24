@@ -1,5 +1,6 @@
 import express from 'express'
 import morgan from 'morgan'
+import { PORT } from './config.js'
 import lenguageRoutes from './routes/lenguage.routes.js'
 
 const app = express()
