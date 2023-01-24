@@ -1,7 +1,7 @@
 import express from 'express'
 import morgan from 'morgan'
 import { PORT } from './config.js'
-import lenguageRoutes from './routes/lenguage.routes.js'
+import languageRoutes from './routes/language.routes.js'
 
 const app = express()
 
@@ -10,7 +10,7 @@ const app = express()
 app.use(morgan('dev'))
 app.use(express.json())
 
-app.use('/api/languages',lenguageRoutes)
+app.use('/api/languages',languageRoutes)
 
 app.use((req,res,next) => {
     res.status(404).json({message:'not found'})
