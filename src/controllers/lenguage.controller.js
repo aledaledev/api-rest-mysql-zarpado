@@ -63,11 +63,7 @@ const deleteLanguage = async (req,res) => {
 
 const editLanguage = async (req,res) => {
     try {
-        const connection = await getConnection()
         const {id} = req.params
-        if(Number(id) === NaN) {
-            res.status(400).json({message:"Bad request. Incorrect id"})
-        }
         const {name, programmers} = req.body
         if(name===undefined || programmers===undefined){
             return res.status(400).json({message:"Bad request. Please fill a field."})
@@ -76,6 +72,7 @@ const editLanguage = async (req,res) => {
             name,
             programmers,
         }
+        const connection = await getConnection()
         const result = await connection.query("UPDATE language SET ? WHERE id = ?",[updateLanguage, id])
         if(result[0].affectedRows === 0){
             return res.status(400).json({message:"Bad request. Incorrect id"})

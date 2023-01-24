@@ -5,6 +5,7 @@ config()
 
 //USER esta reservado y saldra aledale (nombre del usuario actual del sistema)
 //console.log(process.env.USER);
+export const PORT = process.env.PORT
 
 export default {
     host: process.env.DB_HOST || 'localhost',
